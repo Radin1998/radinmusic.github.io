@@ -20,29 +20,26 @@
             border-radius: 24px;
             border: 1px solid rgba(255,255,255,0.1);
             background: #000;
-            /* This ensures the container itself doesn't trigger anything */
-            user-select: none;
-            -webkit-user-select: none;
         }
 
+        /* ZOOM HACK: Hides top/bottom YouTube bars */
         .video-container iframe {
             position: absolute;
             top: 50%; left: 50%;
             width: 100%; height: 115%; 
             transform: translate(-50%, -50%) scale(1.4);
-            /* We tell the video to ignore all clicks */
-            pointer-events: none;
+            pointer-events: none; /* Disables interaction with the video */
         }
 
-        /* THE INVISIBLE SHIELD: A layer of 'glass' over the video */
+        /* THE SHIELD: This invisible box sits on top to stop the Pause UI from appearing */
         .video-shield {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 10;
-            background: transparent;
+            z-index: 50;
+            background: rgba(0,0,0,0); /* Completely invisible */
             cursor: default;
         }
 
@@ -52,9 +49,12 @@
             font-weight: 700; text-transform: uppercase;
             font-size: 0.75rem; letter-spacing: 2px;
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 100;
         }
         .btn-presskit:hover { transform: scale(1.05); background: #f0f0f0; }
-        .icon-link { color: #fff; opacity: 0.8; transition: opacity 0.3s ease; }
+        
+        .icon-link { color: #fff; opacity: 0.8; transition: opacity 0.3s ease; position: relative; z-index: 100; }
         .icon-link:hover { opacity: 1; }
     </style>
 </head>
@@ -74,11 +74,16 @@
     </div>
 
     <div class="flex items-center gap-8 mb-20">
-        <a href="https://instagram.com/radin_music_" target="_blank" class="icon-link"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-        <a href="mailto:contact@djradin.com" class="icon-link"><i data-lucide="mail" class="w-6 h-6"></i></a>
-        <a href="https://wa.me/447597446761" target="_blank" class="icon-link"><i data-lucide="message-circle" class="w-6 h-6"></i></a>
+        <a href="https://instagram.com/radin_music_" target="_blank" class="icon-link">
+            <i data-lucide="instagram" class="w-6 h-6"></i>
+        </a>
+        <a href="mailto:contact@djradin.com" class="icon-link">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+        </a>
+        <a href="https://wa.me/447597446761" target="_blank" class="icon-link">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+        </a>
     </div>
 
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+    <script>
+      lucide.createIcons
