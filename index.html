@@ -1,24 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Radin Music</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RADIN MUSIC | Habibi Afrohouse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #080808; 
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+        }
+        .font-brand { font-family: 'Syncopate', sans-serif; text-transform: uppercase; letter-spacing: -0.05em; }
+        
+        /* Sexy Button Styling */
+        .btn-sexy {
+            background: linear-gradient(45deg, #f59e0b, #ea580c);
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: white;
+            text-decoration: none;
+        }
+        .btn-sexy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(234, 88, 12, 0.5);
+            filter: brightness(1.1);
+        }
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 14px 28px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: white;
+            text-decoration: none;
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #fff;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #fbbf24, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body style="margin:0; font-family:Arial; background:#0b0b0b; color:white; text-align:center;">
+<body class="flex flex-col min-h-screen">
 
-  <h1 style="margin-top:60px; font-size:50px;">Radin Music</h1>
-  <p style="color:gray; font-size:18px;">DJ / Producer</p>
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-20 text-center">
+        
+        <h1 class="font-brand text-5xl md:text-8xl mb-2">Radin Music</h1>
+        <p class="text-amber-500 font-bold tracking-[0.3em] uppercase text-sm mb-10">Habibi Afrohouse / Producer</p>
 
-  <img src="https://via.placeholder.com/600x400" style="width:80%; max-width:500px; border-radius:12px; margin-top:30px;">
+        <div class="relative w-full max-w-lg mb-12">
+            <div class="absolute inset-0 bg-amber-600 rounded-2xl blur-3xl opacity-20"></div>
+            <img src="hero.jpg" onerror="this.src='https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?auto=format&fit=crop&q=80&w=800'" 
+                 class="relative rounded-2xl border border-white/10 shadow-2xl w-full">
+        </div>
 
-  <h2 style="margin-top:40px;">Music</h2>
-  <p><a href="https://soundcloud.com" style="color:#1db954;">Listen on SoundCloud</a></p>
+        <h2 class="font-brand text-2xl md:text-3xl mb-8">High Energy <span class="gradient-text">Magic</span></h2>
 
-  <h2>Socials</h2>
-  <p>
-    <a href="#" style="color:#1da1f2;">Instagram</a> |
-    <a href="#" style="color:#ff0000;">YouTube</a>
-  </p>
+        <div class="flex flex-col md:flex-row gap-4 w-full max-w-md">
+            <a href="https://soundcloud.com/user185861951" target="_blank" class="btn-sexy flex-1">
+                Listen on SoundCloud
+            </a>
+            <a href="https://instagram.com/radin_music_" target="_blank" class="btn-outline flex-1">
+                Instagram
+            </a>
+        </div>
+
+        <div class="mt-8">
+            <a href="presskit.pdf" target="_blank" class="text-sm text-gray-500 hover:text-white transition uppercase tracking-widest underline decoration-amber-500 underline-offset-8">
+                Download Press Kit (PDF)
+            </a>
+        </div>
+    </main>
+
+    <footer class="p-8 text-center text-xs text-gray-600 border-t border-white/5">
+        &copy; 2026 RADIN MUSIC. All rights reserved.
+    </footer>
 
 </body>
 </html>
-<a href="presskit.pdf" class="btn-outline" target="_blank">View Press Kit</a>
