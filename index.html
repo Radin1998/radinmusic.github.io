@@ -22,25 +22,11 @@
             background: #000;
         }
 
-        /* ZOOM HACK: Hides top/bottom YouTube bars */
-        .video-container iframe {
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 100%; height: 115%; 
-            transform: translate(-50%, -50%) scale(1.4);
-            pointer-events: none; /* Disables interaction with the video */
-        }
-
-        /* THE SHIELD: This invisible box sits on top to stop the Pause UI from appearing */
-        .video-shield {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Pure HTML5 Video - No Icons, No Branding */
+        .clean-video {
             width: 100%;
             height: 100%;
-            z-index: 50;
-            background: rgba(0,0,0,0); /* Completely invisible */
-            cursor: default;
+            object-fit: cover;
         }
 
         .btn-presskit {
@@ -49,22 +35,25 @@
             font-weight: 700; text-transform: uppercase;
             font-size: 0.75rem; letter-spacing: 2px;
             transition: all 0.3s ease;
-            position: relative;
-            z-index: 100;
         }
         .btn-presskit:hover { transform: scale(1.05); background: #f0f0f0; }
-        
-        .icon-link { color: #fff; opacity: 0.8; transition: opacity 0.3s ease; position: relative; z-index: 100; }
+        .icon-link { color: #fff; opacity: 0.8; transition: opacity 0.3s ease; }
         .icon-link:hover { opacity: 1; }
     </style>
 </head>
 <body class="flex flex-col items-center px-6 py-12 md:py-20">
 
     <div class="video-container shadow-2xl mb-10">
-        <div class="video-shield"></div>
-        
-        <iframe src="https://www.youtube.com/embed/SOzQEY-413k?autoplay=1&mute=1&controls=0&loop=1&playlist=SOzQEY-413k&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&playsinline=1" 
-                frameborder="0" allow="autoplay; encrypted-media"></iframe>
+        <video 
+            class="clean-video" 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            poster="hero.jpg">
+            <source src="hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <h1 class="font-logo text-5xl md:text-7xl mb-8 tracking-tighter text-center">Radin</h1>
@@ -74,16 +63,11 @@
     </div>
 
     <div class="flex items-center gap-8 mb-20">
-        <a href="https://instagram.com/radin_music_" target="_blank" class="icon-link">
-            <i data-lucide="instagram" class="w-6 h-6"></i>
-        </a>
-        <a href="mailto:contact@djradin.com" class="icon-link">
-            <i data-lucide="mail" class="w-6 h-6"></i>
-        </a>
-        <a href="https://wa.me/447597446761" target="_blank" class="icon-link">
-            <i data-lucide="message-circle" class="w-6 h-6"></i>
-        </a>
+        <a href="https://instagram.com/radin_music_" target="_blank" class="icon-link"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+        <a href="mailto:contact@djradin.com" class="icon-link"><i data-lucide="mail" class="w-6 h-6"></i></a>
+        <a href="https://wa.me/447597446761" target="_blank" class="icon-link"><i data-lucide="message-circle" class="w-6 h-6"></i></a>
     </div>
 
-    <script>
-      lucide.createIcons
+    <script>lucide.createIcons();</script>
+</body>
+</html>
