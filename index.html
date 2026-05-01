@@ -6,10 +6,10 @@
     <title>RADIN | Swedish-Iranian DJ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Unified Font: Inter (Weights 300, 400, 700, 800) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
     <style>
         body { 
-            /* Light Sand Desert Theme */
             background-color: #E6D5C3; 
             color: #4A3F35; 
             font-family: 'Inter', sans-serif;
@@ -17,15 +17,22 @@
                               radial-gradient(circle at bottom left, rgba(212, 163, 115, 0.3), transparent);
             background-attachment: fixed;
         }
-        .font-logo { font-family: 'Syncopate', sans-serif; text-transform: uppercase; letter-spacing: -0.05em; color: #2D241E; }
         
-        /* New Standout Bio Font */
+        /* Consistent Bold Heading Style from image_4a4bbd.png */
+        .font-logo { 
+            font-family: 'Inter', sans-serif; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: -0.02em; 
+            color: #2D241E; 
+        }
+        
         .bio-text { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.25rem; 
-            line-height: 1.4; 
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem; 
+            line-height: 1.6; 
+            font-weight: 400;
             color: #2D241E;
-            letter-spacing: -0.01em;
         }
 
         .video-container {
@@ -47,7 +54,7 @@
         .btn-instagram:hover { transform: scale(1.05); }
         .btn-presskit:hover { background: #4A3F35; transform: translateY(-2px); }
 
-        .gallery-tab { cursor: pointer; transition: all 0.3s ease; border-bottom: 2px solid transparent; color: #8B735B; }
+        .gallery-tab { cursor: pointer; transition: all 0.3s ease; border-bottom: 2px solid transparent; color: #8B735B; font-weight: 700; }
         .gallery-tab.active { color: #2D241E; border-bottom: 2px solid #2D241E; }
         
         .media-card { position: relative; border-radius: 12px; overflow: hidden; background: #DBCAB8; transition: transform 0.3s ease; break-inside: avoid; margin-bottom: 1rem; border: 1px solid rgba(0,0,0,0.05); }
@@ -84,27 +91,25 @@
 
     <div class="about-section grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-24">
         <div class="space-y-2">
-            <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight uppercase text-[#2D241E]">
-                A JOURNEY <span class="text-accent italic">BEYOND</span> BORDERS.
+            <h2 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight uppercase text-[#2D241E]">
+                A JOURNEY <span class="text-accent italic font-bold">BEYOND</span> BORDERS.
             </h2>
         </div>
-        <!-- Enhanced Bio Text -->
         <p class="bio-text">
-            Radin crafts music that moves both body and mind, drawing on rhythms from across the globe. <span class="italic text-accent">Born in Sweden with Iranian heritage</span>, his multicultural background shapes a distinctive, immersive sound.
+            Radin crafts music that moves both body and mind, drawing on rhythms from across the globe. <span class="italic text-accent font-bold">Born in Sweden with Iranian heritage</span>, his multicultural background shapes a distinctive, immersive sound.
         </p>
     </div>
 
     <div class="w-full max-w-6xl">
         <div class="flex justify-center gap-8 mb-12 border-b border-black/5">
-            <h3 onclick="switchGallery('photos')" id="tab-photos" class="gallery-tab active font-logo text-lg tracking-widest pb-4">Photos</h3>
-            <h3 onclick="switchGallery('videos')" id="tab-videos" class="gallery-tab font-logo text-lg tracking-widest pb-4">Videos</h3>
+            <h3 onclick="switchGallery('photos')" id="tab-photos" class="gallery-tab active text-lg uppercase tracking-widest pb-4">Photos</h3>
+            <h3 onclick="switchGallery('videos')" id="tab-videos" class="gallery-tab text-lg uppercase tracking-widest pb-4">Videos</h3>
         </div>
 
         <div id="gallery-photos" class="columns-1 md:columns-2 lg:columns-3 gap-4">
             <div class="media-card">
                 <img src="ikaro-dj.jpg.jpg" alt="DJ Radin Performance">
             </div>
-            <!-- Empty/Broken image slots removed to clean up the site -->
         </div>
 
         <div id="gallery-videos" class="hidden-content columns-1 md:columns-2 lg:columns-3 gap-4" style="display:none;">
@@ -124,14 +129,14 @@
 
     <div id="contact-modal" onclick="toggleModal(false)">
         <div class="bg-[#F5EBE0] p-8 rounded-3xl border border-[#BC8A5F] max-w-sm w-full mx-4 text-center" onclick="event.stopPropagation()">
-            <h3 class="font-logo text-xl mb-6 text-[#2D241E]">Contact</h3>
+            <h3 class="font-bold uppercase tracking-widest text-xl mb-6 text-[#2D241E]">Contact</h3>
             <div class="space-y-6">
                 <div>
-                    <p class="text-xs text-[#8B735B] uppercase tracking-widest mb-1">WhatsApp</p>
+                    <p class="text-xs text-[#8B735B] uppercase tracking-widest mb-1 font-bold">WhatsApp</p>
                     <a href="https://wa.me/447597446761" class="text-xl font-bold text-[#2D241E] hover:text-accent transition-colors">+44 7597 446761</a>
                 </div>
             </div>
-            <button onclick="toggleModal(false)" class="mt-8 text-[#8B735B] text-xs uppercase tracking-widest hover:text-[#2D241E]">Close</button>
+            <button onclick="toggleModal(false)" class="mt-8 text-[#8B735B] text-xs uppercase tracking-widest font-bold hover:text-[#2D241E]">Close</button>
         </div>
     </div>
 
