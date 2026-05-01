@@ -6,7 +6,7 @@
     <title>RADIN | Swedish-Iranian DJ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         body { 
             /* Light Sand Desert Theme */
@@ -19,6 +19,15 @@
         }
         .font-logo { font-family: 'Syncopate', sans-serif; text-transform: uppercase; letter-spacing: -0.05em; color: #2D241E; }
         
+        /* New Standout Bio Font */
+        .bio-text { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.25rem; 
+            line-height: 1.4; 
+            color: #2D241E;
+            letter-spacing: -0.01em;
+        }
+
         .video-container {
             width: 100%; max-width: 350px; aspect-ratio: 9/16;
             position: relative; overflow: hidden; border-radius: 24px;
@@ -63,11 +72,9 @@
     </div>
 
     <div class="flex flex-wrap justify-center gap-4 mb-20">
-        <!-- Instagram Button with Icon -->
         <a href="https://instagram.com/radin_music_" target="_blank" class="btn-instagram flex items-center gap-2">
             <i data-lucide="instagram" class="w-4 h-4"></i> Instagram
         </a>
-        <!-- Fixed SoundCloud Link -->
         <a href="https://soundcloud.com/user185861951" target="_blank" class="btn-soundcloud flex items-center gap-2">
             <i data-lucide="music" class="w-4 h-4"></i> SoundCloud
         </a>
@@ -81,8 +88,9 @@
                 A JOURNEY <span class="text-accent italic">BEYOND</span> BORDERS.
             </h2>
         </div>
-        <p class="text-[#6B5E54] leading-relaxed text-sm md:text-base">
-            Radin crafts music that moves both body and mind, drawing on rhythms from across the globe. Born in Sweden with Iranian heritage, his multicultural background shapes a distinctive, immersive sound.
+        <!-- Enhanced Bio Text -->
+        <p class="bio-text">
+            Radin crafts music that moves both body and mind, drawing on rhythms from across the globe. <span class="italic text-accent">Born in Sweden with Iranian heritage</span>, his multicultural background shapes a distinctive, immersive sound.
         </p>
     </div>
 
@@ -96,12 +104,7 @@
             <div class="media-card">
                 <img src="ikaro-dj.jpg.jpg" alt="DJ Radin Performance">
             </div>
-            <div class="media-card">
-                <img src="image_84f796.jpg" alt="DJ Radin Press Photo">
-            </div>
-            <div class="media-card">
-                <img src="image_840a40.jpg" alt="DJ Radin Live">
-            </div>
+            <!-- Empty/Broken image slots removed to clean up the site -->
         </div>
 
         <div id="gallery-videos" class="hidden-content columns-1 md:columns-2 lg:columns-3 gap-4" style="display:none;">
@@ -133,7 +136,6 @@
     </div>
 
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
 
         function toggleModal(show) {
