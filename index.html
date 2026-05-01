@@ -145,24 +145,28 @@
         <!-- PHOTO GALLERY (UPDATED) -->
         <div id="gallery-photos" class="columns-1 md:columns-2 lg:columns-3 gap-4">
             
-            <!-- Original Image -->
+            <!-- Original Images -->
             <div class="media-card">
                 <img src="ikaro-dj.jpg.jpg" alt="DJ Radin Performance - Ikaro">
             </div>
-
-            <!-- New Image 1 (Hex Named) -->
             <div class="media-card">
                 <img src="a3fb5c9f-7132-488f-8315-1005a9cea66e.jpeg" alt="DJ Radin - Image 1">
             </div>
-
-            <!-- New Image 2 (IMG_5336) -->
             <div class="media-card">
                 <img src="IMG_5336.jpeg" alt="DJ Radin - Image 2">
             </div>
-
-            <!-- New Image 3 (IMG_0268) -->
             <div class="media-card">
                 <img src="IMG_0268.jpeg" alt="DJ Radin - Image 3">
+            </div>
+
+            <!-- New Image 4 (IMG_4488) -->
+            <div class="media-card">
+                <img src="IMG_4488.jpeg" alt="DJ Radin Performance - Image 4">
+            </div>
+
+            <!-- New Image 5 (Hex Named) -->
+            <div class="media-card">
+                <img src="921EE074-552A-4427-8B16-4CD7FC98B73.jpeg" alt="DJ Radin Performance - Image 5">
             </div>
 
         </div>
@@ -220,47 +224,4 @@
     <div class="flex items-center gap-10 mt-24 mb-10">
         <a href="https://instagram.com/radin_music_" target="_blank" class="text-[#8B735B] hover:text-[#2D241E] transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
         <a href="mailto:contact@djradin.com" class="text-[#8B735B] hover:text-[#2D241E] transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
-        <a href="https://wa.me/447597446761" target="_blank" class="text-[#8B735B] hover:text-[#2D241E] transition-colors"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-    </div>
-
-    <div id="contact-modal" onclick="toggleModal(false)">
-        <div class="bg-[#F5EBE0] p-8 rounded-3xl border border-[#BC8A5F] max-w-sm w-full mx-4 text-center" onclick="event.stopPropagation()">
-            <h3 class="font-bold uppercase tracking-widest text-xl mb-6 text-[#2D241E]">Contact</h3>
-            <div class="space-y-6">
-                <div>
-                    <p class="text-xs text-[#8B735B] uppercase tracking-widest mb-1 font-bold">WhatsApp</p>
-                    <a href="https://wa.me/447597446761" class="text-xl font-bold text-[#2D241E] hover:text-accent transition-colors">+44 7597 446761</a>
-                </div>
-            </div>
-            <button onclick="toggleModal(false)" class="mt-8 text-[#8B735B] text-xs uppercase tracking-widest font-bold hover:text-[#2D241E]">Close</button>
-        </div>
-    </div>
-
-    <script>
-        lucide.createIcons();
-
-        function toggleModal(show) {
-            document.getElementById('contact-modal').style.display = show ? 'flex' : 'none';
-        }
-
-        function switchGallery(type) {
-            const photos = document.getElementById('gallery-photos');
-            const videos = document.getElementById('gallery-videos');
-            const tabP = document.getElementById('tab-photos');
-            const tabV = document.getElementById('tab-videos');
-            
-            if (type === 'photos') {
-                photos.style.display = 'block';
-                videos.style.display = 'none';
-                tabP.classList.add('active');
-                tabV.classList.remove('active');
-            } else {
-                photos.style.display = 'none';
-                videos.style.display = 'block';
-                tabV.classList.add('active');
-                tabP.classList.remove('active');
-            }
-        }
-    </script>
-</body>
-</html>
+        <a href="https://wa.me/447597446761" target="_blank" class="text-[#8B735B] hover:text-[#2D241E] transition-colors"><i data-lucide="message-circle" class="w-5 h-5">
