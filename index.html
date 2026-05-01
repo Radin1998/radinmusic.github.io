@@ -79,11 +79,16 @@
             border: 1px solid rgba(0,0,0,0.05);
             min-height: 200px;
         }
-        .media-card video {
+        .media-card video, .media-card iframe {
             width: 100%;
             height: 100%;
             display: block;
             object-fit: cover;
+        }
+        /* Fix for YouTube Short Aspect Ratio in Gallery */
+        .yt-short {
+            aspect-ratio: 9/16;
+            max-height: 500px;
         }
         .media-card:hover { transform: scale(1.01); }
         
@@ -94,7 +99,6 @@
 </head>
 <body class="flex flex-col items-center px-6 py-12 md:py-20">
 
-    <!-- MAIN HERO VIDEO (UNCHANGED) -->
     <div class="video-container shadow-2xl mb-10">
         <video class="clean-video" autoplay muted loop playsinline>
             <source src="hero-video.mp4" type="video/mp4">
@@ -137,17 +141,27 @@
         </div>
 
         <div id="gallery-videos" class="hidden-content columns-1 md:columns-2 lg:columns-3 gap-4" style="display:none;">
-            <!-- Video 1 -->
+            <!-- Video 1 (Existing Local Video) -->
             <div class="media-card">
-                <video controls playsinline preload="auto">
+                <video controls playsinline preload="metadata">
                     <source src="drop1.mp4" type="video/mp4">
                 </video>
             </div>
-            <!-- Video 2: FIXED WITH CONTROLS AND AUDIO -->
+            <!-- Video 2 (Existing Local Video) -->
             <div class="media-card">
-                <video controls playsinline preload="auto">
+                <video controls playsinline preload="metadata">
                     <source src="dj-boat-1.mp4" type="video/mp4">
                 </video>
+            </div>
+            <!-- NEW Video 3 (YouTube Short) -->
+            <div class="media-card yt-short">
+                <iframe 
+                    src="https://www.youtube.com/embed/S1O2ERgULfg?modestbranding=1&rel=0" 
+                    title="Radin YouTube Short" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </div>
