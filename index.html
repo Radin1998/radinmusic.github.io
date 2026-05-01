@@ -15,39 +15,28 @@
             background-image: radial-gradient(circle at top right, rgba(212, 163, 115, 0.15), transparent),
                               radial-gradient(circle at bottom left, rgba(180, 125, 74, 0.1), transparent);
         }
-
         .font-logo { font-family: 'Syncopate', sans-serif; text-transform: uppercase; letter-spacing: -0.05em; }
-        
         .video-container {
             width: 100%; max-width: 350px; aspect-ratio: 9/16;
             position: relative; overflow: hidden; border-radius: 24px;
             border: 1px solid #d4a373; background: #000;
             box-shadow: 0 0 50px rgba(212, 163, 115, 0.1);
         }
-
         .clean-video { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Buttons */
         .btn-presskit { background: #f4f4f4; color: #000; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: all 0.3s ease; }
         .btn-chat { border: 1px solid #d4a373; color: #d4a373; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: all 0.3s ease; }
         .btn-soundcloud { background: #ff5500; color: #fff; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3); }
         .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: all 0.3s ease; }
-
         .btn-chat:hover { background: #d4a373; color: #000; }
         .btn-soundcloud:hover { background: #ff7733; transform: scale(1.08); }
         .btn-instagram:hover { transform: scale(1.08); box-shadow: 0 4px 20px rgba(220, 39, 67, 0.4); }
         .btn-presskit:hover { background: #ffffff; transform: translateY(-2px); }
-
-        /* Gallery Styles */
         .gallery-tab { cursor: pointer; transition: all 0.3s ease; border-bottom: 2px solid transparent; }
         .gallery-tab.active { color: #d4a373; border-bottom: 2px solid #d4a373; }
-        
         .media-card { position: relative; border-radius: 12px; overflow: hidden; background: #1a1a1a; transition: transform 0.3s ease; break-inside: avoid; margin-bottom: 1rem; }
         .media-card:hover { transform: scale(1.02); }
         .media-card img, .media-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
-
         .hidden-content { display: none; }
-
         #contact-modal { display: none; position: fixed; inset: 0; background: rgba(8, 8, 8, 0.95); z-index: 50; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
         .about-section { max-width: 900px; border-top: 1px solid rgba(212, 163, 115, 0.2); padding-top: 4rem; }
         .text-accent { color: #d4a373; }
@@ -55,20 +44,17 @@
 </head>
 <body class="flex flex-col items-center px-6 py-12 md:py-20">
 
-    <!-- Hero Video -->
     <div class="video-container shadow-2xl mb-10">
         <video class="clean-video" autoplay muted loop playsinline>
             <source src="hero-video.mp4" type="video/mp4">
         </video>
     </div>
 
-    <!-- Title -->
     <div class="text-center mb-10">
         <h1 class="font-logo text-5xl md:text-7xl tracking-tighter">Radin</h1>
         <p class="text-accent uppercase tracking-[0.3em] text-xs md:text-sm font-bold mt-2">Swedish-Iranian DJ</p>
     </div>
 
-    <!-- Buttons -->
     <div class="flex flex-wrap justify-center gap-4 mb-20">
         <a href="https://instagram.com/radin_music_" target="_blank" class="btn-instagram flex items-center gap-2">
             <i data-lucide="instagram" class="w-4 h-4"></i> Instagram
@@ -80,7 +66,6 @@
         <button onclick="toggleModal(true)" class="btn-chat">Let's Chat</button>
     </div>
 
-    <!-- About -->
     <div class="about-section grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-24">
         <div class="space-y-2">
             <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight uppercase">
@@ -92,28 +77,25 @@
         </p>
     </div>
 
-    <!-- Gallery Section -->
     <div class="w-full max-w-6xl">
         <div class="flex justify-center gap-8 mb-12 border-b border-white/10">
             <h3 onclick="switchGallery('photos')" id="tab-photos" class="gallery-tab active font-logo text-lg tracking-widest pb-4">Photos</h3>
             <h3 onclick="switchGallery('videos')" id="tab-videos" class="gallery-tab font-logo text-lg tracking-widest pb-4 text-gray-600">Videos</h3>
         </div>
 
-        <!-- Photos Grid -->
         <div id="gallery-photos" class="columns-1 md:columns-2 lg:columns-3 gap-4">
             <div class="media-card">
-                <!-- UPDATED FILENAME HERE -->
-                <img src="ikaro-dj.jpg" alt="DJ Radin Performance">
+                <!-- Matching your exact filename on GitHub -->
+                <img src="ikaro-dj.jpg.jpg" alt="DJ Radin Performance">
             </div>
             <div class="media-card">
                 <img src="image_84f796.jpg" alt="DJ Radin Press Photo">
             </div>
-            <!-- Ensure these two filenames also exist in your GitHub repo -->
-            <div class="media-card"><img src="photo2.jpg" alt="DJ Radin Live"></div>
-            <div class="media-card"><img src="photo3.jpg" alt="DJ Radin Portrait"></div>
+            <div class="media-card">
+                <img src="image_840a40.jpg" alt="DJ Radin Live">
+            </div>
         </div>
 
-        <!-- Videos Grid (Hidden) -->
         <div id="gallery-videos" class="hidden-content columns-1 md:columns-2 lg:columns-3 gap-4">
             <div class="media-card">
                 <video muted loop onmouseover="this.play()" onmouseout="this.pause()">
@@ -123,14 +105,12 @@
         </div>
     </div>
 
-    <!-- Socials Footer -->
     <div class="flex items-center gap-10 mt-24 mb-10">
         <a href="https://instagram.com/radin_music_" target="_blank" class="text-gray-400 hover:text-accent transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
         <a href="mailto:contact@djradin.com" class="text-gray-400 hover:text-accent transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
         <a href="https://wa.me/447597446761" target="_blank" class="text-gray-400 hover:text-accent transition-colors"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
     </div>
 
-    <!-- Modal -->
     <div id="contact-modal" onclick="toggleModal(false)">
         <div class="bg-[#151412] p-8 rounded-3xl border border-[#d4a37333] max-w-sm w-full mx-4 text-center" onclick="event.stopPropagation()">
             <h3 class="font-logo text-xl mb-6 text-accent">Contact</h3>
