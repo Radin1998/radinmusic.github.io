@@ -56,12 +56,12 @@
             padding: 12px 30px; border-radius: 50px;
             font-weight: 700; text-transform: uppercase;
             font-size: 0.7rem; letter-spacing: 2px;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
         }
         
         .btn-chat:hover { background: #d4a373; color: #000; }
-        .btn-soundcloud:hover { background: #ff7733; transform: scale(1.05); }
+        .btn-soundcloud:hover { background: #ff7733; transform: scale(1.08); box-shadow: 0 8px 25px rgba(255, 85, 0, 0.5); }
         .btn-presskit:hover { background: #ffffff; transform: translateY(-2px); }
 
         /* Modal Styling */
@@ -99,8 +99,9 @@
     </div>
 
     <div class="flex flex-wrap justify-center gap-4 mb-20">
+        <!-- FIXED SOUNDCLOUD LINK BELOW -->
         <a href="https://soundcloud.com/user-185861951" target="_blank" class="btn-soundcloud flex items-center gap-2">
-            SoundCloud
+            <i data-lucide="music" class="w-4 h-4"></i> SoundCloud
         </a>
         <a href="presskit.pdf" target="_blank" class="btn-presskit">Press Kit</a>
         <button onclick="toggleModal(true)" class="btn-chat">Let's Chat</button>
