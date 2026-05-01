@@ -85,7 +85,7 @@
             display: block;
             object-fit: cover;
         }
-        .media-card:hover { transform: scale(1.02); }
+        .media-card:hover { transform: scale(1.01); }
         
         #contact-modal { display: none; position: fixed; inset: 0; background: rgba(45, 36, 30, 0.8); z-index: 50; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
         .about-section { max-width: 900px; border-top: 1px solid rgba(45, 36, 30, 0.1); padding-top: 4rem; }
@@ -94,6 +94,7 @@
 </head>
 <body class="flex flex-col items-center px-6 py-12 md:py-20">
 
+    <!-- MAIN HERO VIDEO (UNCHANGED) -->
     <div class="video-container shadow-2xl mb-10">
         <video class="clean-video" autoplay muted loop playsinline>
             <source src="hero-video.mp4" type="video/mp4">
@@ -138,13 +139,13 @@
         <div id="gallery-videos" class="hidden-content columns-1 md:columns-2 lg:columns-3 gap-4" style="display:none;">
             <!-- Video 1 -->
             <div class="media-card">
-                <video muted loop onmouseover="this.play()" onmouseout="this.pause()" playsinline preload="auto">
+                <video controls playsinline preload="auto">
                     <source src="drop1.mp4" type="video/mp4">
                 </video>
             </div>
-            <!-- Video 2: New MP4 Format -->
+            <!-- Video 2: FIXED WITH CONTROLS AND AUDIO -->
             <div class="media-card">
-                <video muted loop onmouseover="this.play()" onmouseout="this.pause()" playsinline preload="auto">
+                <video controls playsinline preload="auto">
                     <source src="dj-boat-1.mp4" type="video/mp4">
                 </video>
             </div>
