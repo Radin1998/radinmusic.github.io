@@ -77,19 +77,20 @@
             break-inside: avoid; 
             margin-bottom: 1rem; 
             border: 1px solid rgba(0,0,0,0.05);
-            min-height: 200px;
         }
-        .media-card video, .media-card iframe {
+
+        .yt-short {
+            aspect-ratio: 9/16;
+            width: 100%;
+            background: #000;
+        }
+
+        .yt-short iframe {
             width: 100%;
             height: 100%;
             display: block;
-            object-fit: cover;
         }
-        /* Fix for YouTube Short Aspect Ratio in Gallery */
-        .yt-short {
-            aspect-ratio: 9/16;
-            max-height: 500px;
-        }
+
         .media-card:hover { transform: scale(1.01); }
         
         #contact-modal { display: none; position: fixed; inset: 0; background: rgba(45, 36, 30, 0.8); z-index: 50; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
@@ -99,6 +100,7 @@
 </head>
 <body class="flex flex-col items-center px-6 py-12 md:py-20">
 
+    <!-- HERO VIDEO (LOCAL FILE) -->
     <div class="video-container shadow-2xl mb-10">
         <video class="clean-video" autoplay muted loop playsinline>
             <source src="hero-video.mp4" type="video/mp4">
@@ -134,35 +136,29 @@
             <h3 onclick="switchGallery('videos')" id="tab-videos" class="gallery-tab text-lg uppercase tracking-widest pb-4">Videos</h3>
         </div>
 
+        <!-- PHOTO GALLERY -->
         <div id="gallery-photos" class="columns-1 md:columns-2 lg:columns-3 gap-4">
             <div class="media-card">
                 <img src="ikaro-dj.jpg.jpg" alt="DJ Radin Performance">
             </div>
         </div>
 
+        <!-- VIDEO GALLERY (YOUTUBE METHOD ONLY) -->
         <div id="gallery-videos" class="hidden-content columns-1 md:columns-2 lg:columns-3 gap-4" style="display:none;">
-            <!-- Video 1 (Existing Local Video) -->
-            <div class="media-card">
-                <video controls playsinline preload="metadata">
-                    <source src="drop1.mp4" type="video/mp4">
-                </video>
-            </div>
-            <!-- Video 2 (Existing Local Video) -->
-            <div class="media-card">
-                <video controls playsinline preload="metadata">
-                    <source src="dj-boat-1.mp4" type="video/mp4">
-                </video>
-            </div>
-            <!-- NEW Video 3 (YouTube Short) -->
+            
+            <!-- YouTube Video 1 -->
             <div class="media-card yt-short">
                 <iframe 
                     src="https://www.youtube.com/embed/S1O2ERgULfg?modestbranding=1&rel=0" 
-                    title="Radin YouTube Short" 
+                    title="Radin Performance" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
             </div>
+
+            <!-- You can add more YouTube videos here using the same structure above -->
+
         </div>
     </div>
 
